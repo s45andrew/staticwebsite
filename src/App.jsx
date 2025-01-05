@@ -9,8 +9,9 @@ function App() {
   return (
     <>
       <div>
-        <h1> ye ye ye this is moving 7.20 pm</h1>
+        <h1> Frantic Stats</h1>
         <a href="https://vite.dev" target="_blank">
+        <h2>data analytics</h2>
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
         <a href="https://react.dev" target="_blank">
