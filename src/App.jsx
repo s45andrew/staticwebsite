@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import './page1.html'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -31,22 +32,10 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+    <p>iframe here</p>
+      <iframe src="page1.html" width="600" height="400" title="Page 1"></iframe>
 
-      <div class='aParent'>
-        <div id="pictures" class="column half">
-            <div id="window">
-                <div class="window-buttons">
-                    <button onclick="openNewPage('page1.html', '#2B0001')">Shares</button>
-                    <button onclick="openNewPage('page2.html', '#001E00')">News</button>
-                    <button onclick="openNewPage('page3.html', '#000328')">Sports</button>
-                    <button onclick="openNewPage('page4.html', '#6A4900')"> ToDo </button>
-                </div>
-                <div id="inner-window">
-                    <iframe id="inner-iframe" src=""></iframe>
-                </div>
-            </div>
-        </div>
-        </div>
+         
     </>
            
   )
