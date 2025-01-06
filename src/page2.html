@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News Headlines</title>
+</head>
+<body>
+    <h1>Top News Headlines</h1>
+    <ul id="news-headlines"></ul>
+
+    <script>
+        async function getNewsHeadlines() {
+            const apiKey = 'b855f84046cf4a01b2b24d3ccd6cde0c';
+            const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+            
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                if (data.status === 'ok') {
+                    return data.articles.map(article => article.title);
+                } else {
+                    throw new Error('Failed to fetch news headlines');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                return [];
+            }
+        }
+
+        // Example usage
+        getNewsHeadlines().then(headlines => {
+            const headlinesList = document.getElementById('news-headlines');
+            headlines.forEach((headline, index) => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${index + 1}. ${headline}`;
+                headlinesList.appendChild(listItem);
+            });
+        });
+    </script>
+</body>
+</html>
